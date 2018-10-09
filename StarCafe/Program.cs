@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace StarCafe
 {
@@ -6,7 +7,14 @@ namespace StarCafe
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Drink drink = new Espresso();
+            Console.WriteLine(drink.GetDescription()+ drink.GetPrice().ToString());
+
+            Drink secondDrink = new StarCafeSpecial();
+            secondDrink = new Chocolate(secondDrink);
+
+            Console.WriteLine(secondDrink.GetDescription() + secondDrink.GetPrice().ToString());
+            Console.ReadLine();
         }
     }
 }
